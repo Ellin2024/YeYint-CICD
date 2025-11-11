@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class WelcomeController 
 {
-	@GetMapping("/Welcome")
+	@GetMapping("/index")
 	public String welcomePage()
 	{
 		String text = "Welcome to Docker";
