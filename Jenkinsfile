@@ -41,10 +41,21 @@ pipeline {
        stage('Run Docker Container') {
         steps {
             echo "Running container locally (port 8082)..."
+            // sh """
+            //     docker stop spring-html  true
+            //     docker rm spring-html  true
+            //     docker run -d --name spring-html -p 8081:8080 ${DOCKER_REPO}:${env.IMAGE_TAG}
+            // """
             sh """
-                docker stop spring-html  true
-                docker rm spring-html  true
-                docker run -d --name spring-html -p 8081:8080 ${DOCKER_REPO}:${env.IMAGE_TAG}
+                if [ \$(docker ps -a --format '{{.Names}}' | grep -w spring-html | wc -l) -gt 0 ]; then
+                    echo "   Removing existing container..."
+                    docker stop spring-html
+                    docker rm spring-html
+                else
+                    echo "  No existing container found."
+                fi
+            
+                docker run -d --name spring-html -p 8081:8080 ${DOCKER_REPO}:${IMAGE_TAG}
             """
         }
     }
