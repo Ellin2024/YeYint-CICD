@@ -11,7 +11,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git branch: 'main', url: 'https://github.com/YeYint2025/YeYint-CICD.git'
+                git branch: 'main', url: 'https://github.com/YeYint2024/YeYint-CICD.git'
             }
         }
 
