@@ -1,4 +1,5 @@
-FROM openjdk:21
+FROM eclipse-temurin:21-jdk
+WORKDIR /app
 LABEL maintainer="javaguides.net"
 ADD target/HelloWorld-0.0.1.jar welcome.jar
 EXPOSE 8080
