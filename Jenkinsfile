@@ -5,7 +5,7 @@ pipeline {
         DOCKER_REPO = "spring-html"
         APP_JAR = "target\\HelloWorld-0.0.1.jar"
         DOCKER_CREDENTIALS_ID = "dockerhub-credentials"
-        DOCKER_HOST_PORT = "8081"
+        DOCKER_HOST_PORT = "8080"
     }
 
     stages {
