@@ -41,7 +41,7 @@ pipeline {
        
        stage('Run Docker Container') {
         steps {
-            echo 'Running container locally (port 8082)...'
+            echo 'Running container locally (port 9090)...'
             sh '''
                 docker stop spring-html || true
                 docker rm spring-html || true
