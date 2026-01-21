@@ -10,7 +10,7 @@ pipeline {
         DOCKER_REPO = "spring-html"
         APP_JAR = "target\\HelloWorld-0.0.1.jar"
         DOCKER_CREDENTIALS_ID = "dockerhub-credentials"
-        DOCKER_HOST_PORT = "8080"
+        DOCKER_HOST_PORT = "8082"
     }
 
     stages {
@@ -41,7 +41,7 @@ pipeline {
        
        stage('Run Docker Container') {
         steps {
-            echo 'Running container locally (port 9090)...'
+            echo 'Running container locally (port 8082)...'
             sh '''
                 docker stop spring-html || true
                 docker rm spring-html || true
