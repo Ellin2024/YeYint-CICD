@@ -1,6 +1,11 @@
 pipeline {
     agent any
 
+    tools {
+        maven 'Maven'
+        jdk 'JDK21'
+    }
+
     environment {
         DOCKER_REPO = "spring-html"
         APP_JAR = "target\\HelloWorld-0.0.1.jar"
